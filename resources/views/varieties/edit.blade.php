@@ -22,6 +22,8 @@
     </head>
     <body class="antialiased">
     <h1>這是狗狗品種編輯</h1>
+    狗狗類型：{{ $type }}</br>
+    狗狗名稱：{{ $dog_namw }}</br>
     <a href="<?php echo route('varieties.index'); ?>">返回狗狗品種首頁</a>
     </body>
 </html>

@@ -22,6 +22,8 @@
     </head>
     <body class="antialiased">
     <h1>這是狗狗類型單一顯示</h1>
+    {{ $message }} </br>
+    {{ $somatotypes }} </br>
     <a href="<?php echo route('somatotypes.index'); ?>">返回狗狗類型首頁</a>
     </body>
 </html>
