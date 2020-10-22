@@ -16,7 +16,7 @@ class CreateSomatotypesTable extends Migration
         Schema::create('somatotypes', function (Blueprint $table) {
             //$table->id();
             $table->id('somatotype_id')->unsigned()->comment('體型編號');
-            $table->string('somatotype')->comment('體型');
+            $table->string('somatotype', 20)->comment('體型');
             $table->float('avg_height')->comment('平均身高');
             $table->float('avg_weight')->unsigned()->comment('平均體重');
             $table->timestamps();

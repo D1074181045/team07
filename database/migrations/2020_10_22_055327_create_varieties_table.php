@@ -14,10 +14,10 @@ class CreateVarietiesTable extends Migration
     public function up()
     {
         Schema::create('varieties', function (Blueprint $table) {
-            $table->id()->comment('名稱');
-            $table->string('name')->comment('名稱');
+            $table->id()->comment('編號');
+            $table->string('name', 30)->comment('名稱');
             $table->foreignId('somatotype_id')->unsigned()->comment('體型編號');
-            $table->string('source')->comment('原產地');
+            $table->string('source', 60)->comment('原產地');
             $table->tinyInteger('avg_life')->unsigned()->comment('平均壽命');
             $table->foreign('somatotype_id')->references('somatotype_id')->on('somatotypes');//->onDelete('cascade');
             $table->timestamps();
