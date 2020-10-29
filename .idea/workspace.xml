@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="692188ba-0b4d-4208-bbca-f97c03fcad7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_22_055125_create_somatotypes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_22_055125_create_somatotypes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_22_055327_create_varieties_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_22_055327_create_varieties_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +176,9 @@
       <workItem from="1602725845439" duration="708000" />
       <workItem from="1602728232406" duration="5333000" />
       <workItem from="1602740807090" duration="4228000" />
-      <workItem from="1603334513042" duration="9896000" />
+      <workItem from="1603334513042" duration="10301000" />
+      <workItem from="1603935099122" duration="6294000" />
+      <workItem from="1603949732964" duration="5133000" />
     </task>
     <servers />
   </component>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Varietie;
 use Illuminate\Http\Request;
 
 class VarietiesController extends Controller
@@ -27,7 +28,14 @@ class VarietiesController extends Controller
 
     public function show($id)
     {
-        $dog_namw = "狗狗";
-        return view('varieties.show') -> with(["varieties_id" => $id, "dog_name" => $dog_namw]);
+//        $dog_namw = "狗狗";
+//        return view('varieties.show') -> with(["varieties_id" => $id, "dog_name" => $dog_namw]);
+
+        $varietie = Varietie::find($id);
+
+        if ($varietie == null)
+            return "No find";
+
+        return view('varieties.show', $varietie);
     }
 }
