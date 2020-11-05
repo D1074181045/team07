@@ -15,11 +15,11 @@ use App\Http\Controllers\VarietiesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-// Route::get('varieties', function () { return view('varieties.index'); }) -> name('varieties.index');
+Route::get('/', [VarietiesController::class, 'index']);
 
 Route::get('varieties', [VarietiesController::class, 'index']) -> name('varieties.index');
 
@@ -42,3 +42,6 @@ Route::get('somatotypes/{id}', [SomatotypesController::class, 'show'] ) -> name(
 
 Route::get('somatotypes/{id}/edit', [SomatotypesController::class, 'edit']) -> name('somatotypes.edit');
 
+Route::post('somatotypes/store', [SomatotypesController::class, 'store']) -> name('somatotypes.store');
+
+Route::post('somatotypes/{id}/update', [SomatotypesController::class, 'update']) -> name('somatotypes.update');

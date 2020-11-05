@@ -21,7 +21,29 @@
         </style>
     </head>
     <body class="antialiased">
+
+
     <h1>這是狗狗品種首頁</h1>
+    <table >
+        <tr>
+            <td>狗狗ID</td>
+            <td>狗狗名稱</td>
+            <td>體型編號</td>
+            <td>原產地</td>
+            <td>平均壽命</td>
+        </tr>
+
+        @foreach($varieties as $varietie)
+            <tr>
+                <td>{{ $varietie->id }}</td>
+                <td>{{ $varietie->name }}</td>
+                <td>{{ $varietie->somatotype_id }}</td>
+                <td>{{ $varietie->source }}</td>
+                <td>{{ $varietie->avg_life }}</td>
+            </tr>
+        @endforeach
+
+    </table>
     <a href="<?php echo route('varieties.create'); ?>">新增</a>
     </body>
 </html>

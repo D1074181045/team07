@@ -22,6 +22,26 @@
     </head>
     <body class="antialiased">
     <h1>這是狗狗類型首頁</h1>
-    <a href="<?php echo route('somatotypes.create'); ?>">新增</a>
+
+    <table >
+        <tr>
+            <th>體型編號</th>
+            <th>體型</th>
+            <th>平均身高</th>
+            <th>平均體重</th>
+        </tr>
+
+        @foreach($somatotypes as $somatotype)
+            <tr>
+                <td>{{ $somatotype->somatotype_id }}</td>
+                <td>{{ $somatotype->somatotype }}</td>
+                <td>{{ $somatotype->avg_height }}</td>
+                <td>{{ $somatotype->avg_weight }}</td>
+                <td><a href="somatotypes/{{ $somatotype->somatotype_id }}/edit">修改</a>
+            </tr>
+        @endforeach
+    </table >
+
+    <a href="{{ route('somatotypes.create') }}">新增</a>
     </body>
 </html>

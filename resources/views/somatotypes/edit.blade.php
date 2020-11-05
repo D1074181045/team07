@@ -22,6 +22,37 @@
     </head>
     <body class="antialiased">
     <h1>這是狗狗類型編輯</h1>
-    <a href="<?php echo route('somatotypes.index'); ?>">返回狗狗類型首頁</a>
+
+    <form action="update" method="post" name="formAdd" id="formAdd">
+        <table>
+            <tr>
+                <th>欄位</th><th>資料</th>
+            </tr>
+            <tr>
+                <td>體型</td><td><input type="text" name="somatotype" id="somatotype" value="{{ $somatotype }}"/></td>
+            </tr>
+            <tr>
+                <td>平均身高</td><td><input type="text" name="avg_height" id="avg_height" value="{{ $avg_height }}" /></td>
+            </tr>
+            <tr>
+                <td>平均體重</td><td><input type="text" name="avg_weight" id="avg_weight" value="{{ $avg_weight }}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="button" id="button" value="更新資料" />
+                    <input type="reset" name="button2" id="button2" value="重新填寫" />
+                </td>
+            </tr>
+
+            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+        </table>
+    </form>
+
+{{--    體型編號：{{ $somatotype_id }}</br>--}}
+{{--    體型：{{ $somatotype }}</br>--}}
+{{--    平均身高：{{ $avg_height }}</br>--}}
+{{--    平均體重：{{ $avg_weight }}</br></br>--}}
+
+    <a href="{{ route('somatotypes.index') }}">返回狗狗類型首頁</a>
     </body>
 </html>

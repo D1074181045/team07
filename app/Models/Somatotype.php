@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Somatotype extends Model
 {
     use HasFactory;
-//    protected $table = "";
+
+    protected $primaryKey = "somatotype_id";
+    protected $fillable = [
+        'somatotype',
+        'avg_height',
+        'avg_weight'
+    ];
 }

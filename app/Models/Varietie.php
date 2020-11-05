@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Varietie extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "name",
+        "somatotype_id",
+        "source",
+        "avg_life",
+        "created_at",
+        "updated_at"
+    ];
 }

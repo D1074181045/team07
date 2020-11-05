@@ -22,8 +22,25 @@
     </head>
     <body class="antialiased">
     <h1>這是狗狗類型單一顯示</h1>
-    {{ $message }} </br>
-    {{ $somatotypes }} </br>
-    <a href="<?php echo route('somatotypes.index'); ?>">返回狗狗類型首頁</a>
+
+    <table>
+        <tr>
+            <th>欄位</th><th>資料</th>
+        </tr>
+        <tr>
+            <td>體型編號</td><td>{{ $somatotype_id }}</td>
+        </tr>
+        <tr>
+            <td>體型</td><td>{{ $somatotype }}</td>
+        </tr>
+        <tr>
+            <td>平均身高</td><td>{{ $avg_height }}</td>
+        </tr>
+        <tr>
+            <td>平均體重</td><td>{{ $avg_weight }}</td>
+        </tr>
+    </table>
+
+    <a href="{{ route('somatotypes.index') }}">返回狗狗類型首頁</a>
     </body>
 </html>
