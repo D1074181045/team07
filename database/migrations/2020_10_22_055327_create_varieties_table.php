@@ -16,12 +16,12 @@ class CreateVarietiesTable extends Migration
         Schema::create('varieties', function (Blueprint $table) {
             $table->id()->comment('編號');
             $table->string('name', 30)->comment('名稱');
-            $table->tinyInteger('somatotype_id')->unsigned()->comment('體型編號');
+            $table->bigInteger('somatotype_id')->unsigned()->comment('體型編號');
             $table->string('source', 60)->comment('原產地');
             $table->tinyInteger('avg_life')->unsigned()->comment('平均壽命');
             $table->foreign('somatotype_id')->on('somatotypes')->references('somatotype_id')->onDelete('cascade');
-            //$table->foreign('somatotype_id')->references('somatotype_id')->on('somatotypes');//->onDelete('cascade');
             $table->timestamps();
+//            $table->softDeletes();
         });
     }
 

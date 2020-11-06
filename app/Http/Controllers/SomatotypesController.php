@@ -10,10 +10,27 @@ use Illuminate\Support\Facades\Redirect;
 class SomatotypesController extends Controller
 {
     //
-    public function index()
+    public function index($page=1)
     {
+        $pageRow_records = 20;
+        $num_pages = $page;
+        $startRow_records = ($num_pages -1) * $pageRow_records;
+
         $somatotypes = Somatotype::all();
-        return view('somatotypes.index', ["somatotypes" => $somatotypes]);
+        $total_records = $somatotypes->count();
+        $total_pages = ceil($total_records / $pageRow_records);
+
+        return view('somatotypes.index', [
+            "somatotypes" => $somatotypes->skip($startRow_records)->take(20),
+            "total_records" => $total_records,
+            "total_pages" => $total_pages,
+            "num_pages" => $num_pages
+        ]);
+    }
+
+    public function create()
+    {
+        return view('somatotypes.create');
     }
 
     public function store(Request $request)
@@ -22,29 +39,9 @@ class SomatotypesController extends Controller
             'somatotype' => $request->input("somatotype"),
             'avg_height' => $request->input("avg_height"),
             'avg_weight' => $request->input("avg_weight"),
-            "created_at" => Carbon::now(8),
-            "updated_at" => Carbon::now(8)
         ]);
 
-        return Redirect::to("/somatotypes");
-    }
-
-
-    public function create()
-    {
-        return view('somatotypes.create');
-    }
-
-    public function update($id, Request $request)
-    {
-        $somatotyp = Somatotype::findOrFail($id);
-        $somatotyp->somatotype = $request->input("somatotype");
-        $somatotyp->avg_height = $request->input("avg_height");
-        $somatotyp->avg_weight = $request->input("avg_weight");
-        $somatotyp->updated_at = Carbon::now(8);
-        $somatotyp->save();
-
-        return Redirect::to("/somatotypes");
+        return Redirect::to("/somatotypes/page=1");
     }
 
     public function edit($id)
@@ -54,21 +51,29 @@ class SomatotypesController extends Controller
         return view('somatotypes.edit', $somatotyp);
     }
 
-    public function show($id)
+    public function update($id, Request $request)
     {
-//        $data = [];
-//        $msg = "";
-//        if ($id > 10)
-//            $msg = "大於10";
-//        else
-//            $msg = "小於10";
-//
-//        $data['somatotypes'] = $id;
-//        $data['message'] = $msg;
-//        return view('somatotypes.show', $data); // -> with("message", $msg);
+        $somatotyp = Somatotype::findOrFail($id);
+        $somatotyp->somatotype = $request->input("somatotype");
+        $somatotyp->avg_height = $request->input("avg_height");
+        $somatotyp->avg_weight = $request->input("avg_weight");
+        $somatotyp->save();
 
+        return Redirect::to("/somatotypes/page=1");
+    }
+
+    public function show()
+    {
+        $id = $_GET['id'];
         $somatotype = Somatotype::findOrFail($id)->toArray();
 
         return view('somatotypes.show', $somatotype);
+    }
+
+    public function destroy($id)
+    {
+        Somatotype::destroy($id);
+
+        return Redirect::to('/somatotypes/page=1');
     }
 }

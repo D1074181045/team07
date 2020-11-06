@@ -52,7 +52,7 @@ class VarietiesTableSeeder extends Seeder
             $random_datetime = Carbon::now(8)->subMinutes(rand(1, 55));;
             DB::table('varieties')->insert([
                 'name' => $name,
-                'somatotype_id' => rand(1, 50),
+                'somatotype_id' => rand(1, 7),
                 'source' => $source,
                 'avg_life' => rand(1, 80),
                 'created_at' => $random_datetime,

@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SomatotypesController;
 use App\Http\Controllers\VarietiesController;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,33 +17,48 @@ use App\Http\Controllers\VarietiesController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+/*-----------------------------------------------------------------------------------------------------------------------*/
 
-Route::get('/', [VarietiesController::class, 'index']);
+Route::get("/", function () {
+    return Redirect::to('/varieties/page=1');
+});
 
-Route::get('varieties', [VarietiesController::class, 'index']) -> name('varieties.index');
+/*-----------------------------------------------------------------------------------------------------------------------*/
 
-Route::get('varieties/create', [VarietiesController::class, 'create']) -> name('varieties.create');
+Route::get('varieties/page={page}', [VarietiesController::class, 'index'])->name('varieties.index');
+// 查詢
 
-Route::get('varieties/{id}', [VarietiesController::class, 'show']) -> name('varieties.show');
+Route::get('varieties/create', [VarietiesController::class, 'create'])->name('varieties.create');
+Route::post('varieties/store', [VarietiesController::class, 'store'])->name('varieties.store');
+// 新增
 
-Route::get('varieties/{id}/edit',  [VarietiesController::class, 'edit']) -> name('varieties.edit');
+Route::get('varieties', [VarietiesController::class, 'show'])->name('varieties.show');
+// 單一查詢
 
-/*
- *
- *
- */
+Route::get('varieties/{id}/edit', [VarietiesController::class, 'edit'])->name('varieties.edit');
+Route::post('varieties/{id}/update', [VarietiesController::class, 'update'])->name('varieties.update');
+// 更新
 
-Route::get('somatotypes', [SomatotypesController::class, 'index']) -> name('somatotypes.index');
+Route::get('varieties/{id}/destroy', [VarietiesController::class, 'destroy'])->name('varieties.destroy');
+// 刪除
 
-Route::get('somatotypes/create', [SomatotypesController::class, 'create']) -> name('somatotypes.create');
+/*-----------------------------------------------------------------------------------------------------------------------*/
 
-Route::get('somatotypes/{id}', [SomatotypesController::class, 'show'] ) -> name('somatotypes.show');
+Route::get('somatotypes/page={page}', [SomatotypesController::class, 'index'])->name('somatotypes.index');
+// 查詢
 
-Route::get('somatotypes/{id}/edit', [SomatotypesController::class, 'edit']) -> name('somatotypes.edit');
+Route::get('somatotypes/create', [SomatotypesController::class, 'create'])->name('somatotypes.create');
+Route::post('somatotypes/store', [SomatotypesController::class, 'store'])->name('somatotypes.store');
+// 新增
 
-Route::post('somatotypes/store', [SomatotypesController::class, 'store']) -> name('somatotypes.store');
+Route::get('somatotypes', [SomatotypesController::class, 'show'])->name('somatotypes.show');
+// 單一查詢
 
-Route::post('somatotypes/{id}/update', [SomatotypesController::class, 'update']) -> name('somatotypes.update');
+Route::get('somatotypes/{id}/edit', [SomatotypesController::class, 'edit'])->name('somatotypes.edit');
+Route::post('somatotypes/{id}/update', [SomatotypesController::class, 'update'])->name('somatotypes.update');
+// 更新
+
+Route::get('somatotypes/{id}/destroy', [SomatotypesController::class, 'destroy'])->name('somatotypes.destroy');
+// 刪除
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
