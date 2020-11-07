@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Somatotype;
 use Carbon\Carbon;
+use ErrorException;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -35,13 +37,17 @@ class SomatotypesController extends Controller
 
     public function store(Request $request)
     {
-        Somatotype::create([
-            'somatotype' => $request->input("somatotype"),
-            'avg_height' => $request->input("avg_height"),
-            'avg_weight' => $request->input("avg_weight"),
-        ]);
+        try {
+            Somatotype::create([
+                'somatotype' => $request->input("somatotype"),
+                'avg_height' => $request->input("avg_height"),
+                'avg_weight' => $request->input("avg_weight"),
+            ]);
+        } catch (QueryException $e) {
 
-        return Redirect::to("/somatotypes/page=1");
+        } finally {
+            return Redirect::to("/somatotypes/page=1");
+        }
     }
 
     public function edit($id)
@@ -53,21 +59,29 @@ class SomatotypesController extends Controller
 
     public function update($id, Request $request)
     {
-        $somatotyp = Somatotype::findOrFail($id);
-        $somatotyp->somatotype = $request->input("somatotype");
-        $somatotyp->avg_height = $request->input("avg_height");
-        $somatotyp->avg_weight = $request->input("avg_weight");
-        $somatotyp->save();
+        try {
+            $somatotyp = Somatotype::findOrFail($id);
+            $somatotyp->somatotype = $request->input("somatotype");
+            $somatotyp->avg_height = $request->input("avg_height");
+            $somatotyp->avg_weight = $request->input("avg_weight");
+            $somatotyp->save();
+        } catch (QueryException $e) {
 
-        return Redirect::to("/somatotypes/page=1");
+        } finally {
+            return Redirect::to("/somatotypes/page=1");
+        }
     }
 
     public function show()
     {
-        $id = $_GET['id'];
-        $somatotype = Somatotype::findOrFail($id)->toArray();
-
-        return view('somatotypes.show', $somatotype);
+        try {
+            $id = $_GET['id'];
+            $somatotype = Somatotype::findOrfail($id)->toArray();
+            return view('somatotypes.show', $somatotype);
+        }
+        catch (ErrorException $e) {
+            return abort(404);
+        }
     }
 
     public function destroy($id)

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Somatotype;
 use App\Models\Varietie;
 use Carbon\Carbon;
+use ErrorException;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 class VarietiesController extends Controller
 {
@@ -57,12 +59,11 @@ class VarietiesController extends Controller
                 "source" => $request->input('source'),
                 "avg_life" => $request->input('avg_life'),
             ]);
-        }
-        catch (QueryException $e) {
+        } catch (QueryException $e) {
 
+        } finally {
+            return Redirect::to('/varieties/page=1');
         }
-
-        return Redirect::to('/varieties/page=1');
     }
 
     public function edit($id)
@@ -75,34 +76,38 @@ class VarietiesController extends Controller
 
     public function update($id, Request $request)
     {
-        $varietie = Varietie::findOrFail($id);
-        $varietie->name = $request->input('name');
-        $varietie->somatotype_id = $request->input('somatotype_id');
-        $varietie->source = $request->input('source');
-        $varietie->avg_life = $request->input('avg_life');
-        $varietie->save();
+        try {
+            $varietie = Varietie::findOrFail($id);
+            $varietie->name = $request->input('name');
+            $varietie->somatotype_id = $request->input('somatotype_id');
+            $varietie->source = $request->input('source');
+            $varietie->avg_life = $request->input('avg_life');
+            $varietie->save();
+        } catch (QueryException $e) {
 
-
-        return Redirect::to('/varieties/page=1');
+        } finally {
+            return Redirect::to('/varieties/page=1');
+        }
     }
 
     public function show()
     {
-        $id = $_GET['id'];
-//        $varietie = Varietie::findOrFail($id)->toArray();
+        try {
+            $id = $_GET['id'];
 
-        $varietie = DB::table('varieties')
-            ->where('id', $id)
-//            ->where("varieties.deleted_at" , "=", null)
-//            ->where("somatotypes.deleted_at" , "=", null)
-            ->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
-            ->get();
-
-        if ($varietie->count() == 0)
+            $varietie = DB::table('varieties')
+                ->where('id', $id)
+//                ->where("varieties.deleted_at" , "=", null)
+//                ->where("somatotypes.deleted_at" , "=", null)
+                ->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+                ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+                ->get();
+            return view('varieties.show', ["varietie" => $varietie[0]]);
+        }
+        catch (ErrorException $e)
+        {
             return abort(404);
-
-        return view('varieties.show', ["varietie" => $varietie[0]]);
+        }
     }
 
     public function destroy($id)
