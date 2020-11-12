@@ -45,7 +45,7 @@ class VarietiesTableSeeder extends Seeder
     {
         //
 
-        for ($i=0; $i<100; $i++) {
+        for ($i=0; $i<30; $i++) {
             $name = $this->generateRandomName();
             $source = $this->generateRandomSource();
 

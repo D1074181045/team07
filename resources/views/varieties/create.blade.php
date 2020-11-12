@@ -37,7 +37,7 @@
                 <td>
                     <select name="somatotype_id" id="somatotype_id">
                         @foreach($somatotypes as $somatotype)
-                            <option value="{{ $somatotype->somatotype_id }}">{{ $somatotype->somatotype }}</option>
+                            <option value="{{ $somatotype->somatotype_id }}">{{ $somatotype->somatotype_id }}</option>
                         @endforeach
                     </select>
                 </td>

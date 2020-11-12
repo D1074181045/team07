@@ -42,9 +42,9 @@
                     @foreach($somatotypes as $somatotype)
                         @if ($somatotype->somatotype_id == $somatotype_id)
                             <option value="{{ $somatotype->somatotype_id }}"
-                                    selected>{{ $somatotype->somatotype }}</option>
+                                    selected>{{ $somatotype->somatotype_id }}</option>
                         @else
-                            <option value="{{ $somatotype->somatotype_id }}">{{ $somatotype->somatotype }}</option>
+                            <option value="{{ $somatotype->somatotype_id }}">{{ $somatotype->somatotype_id }}</option>
                         @endif
                     @endforeach
                 </select>

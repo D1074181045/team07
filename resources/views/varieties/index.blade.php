@@ -72,8 +72,8 @@
         <tr align="center">
             <td>{{ $varietie->id }}</td>
             <td>{{ $varietie->name }}</td>
-{{--            <td>{{ $varietie->somatotype_id }}</td>--}}
-            <td>{{ $varietie->somatotype }}</td>
+            <td>{{ $varietie->somatotype_id }}</td>
+{{--            <td>{{ $varietie->somatotype }}</td>--}}
             <td>{{ $varietie->source }}</td>
             <td>{{ $varietie->avg_life }}</td>
             <td><a href="{{ $varietie->id }}/edit">修改</a>

@@ -21,14 +21,14 @@ class VarietiesController extends Controller
         $num_pages = $page;
         $startRow_records = ($num_pages -1) * $pageRow_records;
 
-//        $varieties = Varietie::all();
-        $varieties = DB::table('varieties')
-//            ->where("varieties.deleted_at" , "=", null)
-//            ->where("somatotypes.deleted_at" , "=", null)
-            ->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
-            ->orderBy('id')
-            ->get();
+        $varieties = Varietie::all();
+//        $varieties = DB::table('varieties')
+////            ->where("varieties.deleted_at" , "=", null)
+////            ->where("somatotypes.deleted_at" , "=", null)
+//            ->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+//            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+//            ->orderBy('id')
+//            ->get();
 
 
         $total_records = $varieties->count();
@@ -95,14 +95,16 @@ class VarietiesController extends Controller
         try {
             $id = $_GET['id'];
 
-            $varietie = DB::table('varieties')
-                ->where('id', $id)
-//                ->where("varieties.deleted_at" , "=", null)
-//                ->where("somatotypes.deleted_at" , "=", null)
-                ->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-                ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
-                ->get();
-            return view('varieties.show', ["varietie" => $varietie[0]]);
+            $varietie = Varietie::findOrfail($id);
+            return view('varieties.show', ["varietie" => $varietie]);
+//            $varietie = DB::table('varieties')
+//                ->where('id', $id)
+////                ->where("varieties.deleted_at" , "=", null)
+////                ->where("somatotypes.deleted_at" , "=", null)
+//                ->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+//                ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+//                ->get();
+//            return view('varieties.show', ["varietie" => $varietie[0]]);
         }
         catch (ErrorException $e)
         {

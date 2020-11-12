@@ -37,9 +37,9 @@
         <tr>
             <td>體型編號</td><td>{{ $varietie->somatotype_id }}</td>
         </tr>
-        <tr>
-            <td>體型</td><td>{{ $varietie->somatotype }}</td>
-        </tr>
+{{--        <tr>--}}
+{{--            <td>體型</td><td>{{ $varietie->somatotype }}</td>--}}
+{{--        </tr>--}}
         <tr>
             <td>原產地</td><td>{{ $varietie->source }}</td>
         </tr>
