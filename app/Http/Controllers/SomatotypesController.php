@@ -14,7 +14,7 @@ class SomatotypesController extends Controller
     //
     public function index($page=1)
     {
-        $pageRow_records = 20;
+        $pageRow_records = 10;
         $num_pages = $page;
         $startRow_records = ($num_pages -1) * $pageRow_records;
 

@@ -23,6 +23,10 @@ Route::get("/", function () {
     return Redirect::to('/varieties/page=1');
 });
 
+Route::get('welcome', function () {
+    return view('welcome');
+});
+
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
 Route::get('varieties/page={page}', [VarietiesController::class, 'index'])->name('varieties.index');

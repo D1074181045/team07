@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{{--<!DOCTYPE html>--}}
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
+{{--<head>--}}
+{{--    <meta charset="utf-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
 
     {{--        <title>Laravel</title>--}}
 
@@ -19,11 +19,15 @@
     {{--                font-family: 'Nunito';--}}
     {{--            }--}}
     {{--        </style>--}}
-</head>
-<body class="antialiased">
-<h1 align="center">這是狗狗體型單一顯示</h1>
-<p align="center"><a href="{{ route('somatotypes.index', 1) }}">返回狗狗品種首頁</a></p>
+{{--</head>--}}
+{{--<body class="antialiased">--}}
+{{--<h1 align="center">這是狗狗體型單一顯示</h1>--}}
 
+@extends('app')
+@section('title', '這是狗狗體型單一顯示')
+@section('title_h1', '這是狗狗體型單一顯示')
+@section('dog_content')
+<p align="center"><a href="{{ route('somatotypes.index', 1) }}">返回狗狗體型首頁</a></p>
 <table border="1" align="center">
     <tr>
         <td>查詢指定體型ID</td>
@@ -108,5 +112,7 @@
 
 </script>
 
-</body>
-</html>
+@endsection
+
+{{--</body>--}}
+{{--</html>--}}

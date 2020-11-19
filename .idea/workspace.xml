@@ -23,18 +23,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Somatotype.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Somatotype.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Varietie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Varietie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +224,8 @@
       <workItem from="1605274076559" duration="88000" />
       <workItem from="1605283332337" duration="588000" />
       <workItem from="1605284026677" duration="375000" />
+      <workItem from="1605767107231" duration="4638000" />
+      <workItem from="1605838504040" duration="1988000" />
     </task>
     <servers />
   </component>

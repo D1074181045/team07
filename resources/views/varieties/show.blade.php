@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{{--<!DOCTYPE html>--}}
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
+{{--<head>--}}
+{{--    <meta charset="utf-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
 
     {{--        <title>Laravel</title>--}}
 
@@ -20,9 +20,15 @@
     {{--            }--}}
     {{--        </style>--}}
 
-</head>
-<body class="antialiased">
-<h1 align="center">這是狗狗品種單一顯示</h1>
+{{--</head>--}}
+{{--<body class="antialiased">--}}
+
+
+@extends('app')
+@section('title', '這是狗狗品種單一顯示')
+@section('title_h1', '這是狗狗品種單一顯示')
+@section('dog_content')
+{{--<h1 align="center">這是狗狗品種單一顯示</h1>--}}
 <p align="center"><a href="{{ route('varieties.index', 1) }}">返回狗狗品種首頁</a></p>
 
 <table border="1" align="center">
@@ -141,5 +147,6 @@
 
 </script>
 
-</body>
-</html>
+@endsection
+{{--</body>--}}
+{{--</html>--}}

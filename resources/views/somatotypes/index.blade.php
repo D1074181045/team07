@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/drop-down-menu.css') }}">
+{{--<!DOCTYPE html>--}}
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
+{{--<head>--}}
+{{--    <meta charset="utf-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
+{{--    <link rel="stylesheet" href="{{ asset('css/drop-down-menu.css') }}">--}}
 
-    <title> 狗狗資料管理系統 </title>
+{{--    <title> 狗狗資料管理系統 </title>--}}
     {{--        <title>Laravel</title>--}}
 
     {{--        <!-- Fonts -->--}}
@@ -21,29 +21,34 @@
     {{--                font-family: 'Nunito';--}}
     {{--            }--}}
     {{--        </style>--}}
-</head>
-<body class="antialiased">
+{{--</head>--}}
+{{--<body class="antialiased">--}}
 
-<div class="sample-menu-style dropdown-menu">
-	    <span aria-label="點擊選取" title="點擊選取" tabindex="0" onclick="return true">
-		<svg focusable="false" height="25" width="50">
-			<path d="M0 0 L0 5 L100 5 L100 0,
-					 M0 10 L0 15 L100 15 L100 10,
-					 M0 20 L0 25 L100 25 L100 20 Z"
-            </path>
-		</svg>
-		</span>
-    <label>狗狗體型清單</label>
-    <div tabindex="0" onclick="return true"></div>
-    <ul>
-        <li><a href="{{ route("varieties.index", 1) }}">狗狗品種清單</a>
-        </li>
-        <li><a href="{{ route("somatotypes.index", 1) }}">狗狗體型清單</a>
-        </li>
-    </ul>
-</div>
-</body>
-<br>
+{{--<div class="sample-menu-style dropdown-menu">--}}
+{{--	    <span aria-label="點擊選取" title="點擊選取" tabindex="0" onclick="return true">--}}
+{{--		<svg focusable="false" height="25" width="50">--}}
+{{--			<path d="M0 0 L0 5 L100 5 L100 0,--}}
+{{--					 M0 10 L0 15 L100 15 L100 10,--}}
+{{--					 M0 20 L0 25 L100 25 L100 20 Z"--}}
+{{--            </path>--}}
+{{--		</svg>--}}
+{{--		</span>--}}
+{{--    <label>狗狗體型清單</label>--}}
+{{--    <div tabindex="0" onclick="return true"></div>--}}
+{{--    <ul>--}}
+{{--        <li><a href="{{ route("varieties.index", 1) }}">狗狗品種清單</a>--}}
+{{--        </li>--}}
+{{--        <li><a href="{{ route("somatotypes.index", 1) }}">狗狗體型清單</a>--}}
+{{--        </li>--}}
+{{--    </ul>--}}
+{{--</div>--}}
+{{--</body>--}}
+{{--<br>--}}
+
+@extends('app')
+@section('title', '這是狗狗全部體型')
+@section('title_h1', '這是狗狗全部體型')
+@section('dog_content')
 <table border="1" align="center">
     <tr>
         <td>目前狗狗體型數目：<div style="color: red;display:inline;font-weight:bold;">{{ $total_records }}</div></td>
@@ -67,6 +72,7 @@
         <th>體型</th>
         <th>平均身高</th>
         <th>平均體重</th>
+        <th colspan="2">操作</th>
     </tr>
 
     @foreach($somatotypes as $somatotype)
@@ -106,5 +112,6 @@
         </td>
     </tr>
 </table>
-</body>
-</html>
+@endsection
+{{--</body>--}}
+{{--</html>--}}

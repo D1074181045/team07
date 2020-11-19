@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{{--<!DOCTYPE html>--}}
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
+{{--<head>--}}
+{{--    <meta charset="utf-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
 
     {{--        <title>Laravel</title>--}}
 
@@ -19,10 +19,15 @@
     {{--                font-family: 'Nunito';--}}
     {{--            }--}}
     {{--        </style>--}}
-</head>
-<body class="antialiased">
-<h1 align="center">這是狗狗體型新增</h1>
-<p align="center"><a href="{{ route('somatotypes.index', 1) }}">返回狗狗品種首頁</a></p>
+{{--</head>--}}
+{{--<body class="antialiased">--}}
+{{--<h1 align="center">這是狗狗體型新增</h1>--}}
+
+@extends('app')
+@section('title', '這是狗狗體型新增')
+@section('title_h1', '這是狗狗體型新增')
+@section('dog_content')
+<p align="center"><a href="{{ route('somatotypes.index', 1) }}">返回狗狗體型首頁</a></p>
 
 <form action="store" method="post" name="formAdd" id="formAdd">
     <table border="1" align="center">
@@ -52,6 +57,7 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
     </table>
 </form>
-</body>
-</html>
+@endsection
+{{--</body>--}}
+{{--</html>--}}
 
