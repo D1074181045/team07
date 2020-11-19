@@ -10,7 +10,7 @@ class Varietie extends Model
 {
     use HasFactory;
 //    use SoftDeletes;
-
+//
 //    protected $dates = ['deleted_at'];
     protected $fillable = [
         "name",

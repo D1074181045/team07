@@ -19,23 +19,19 @@ class VarietiesController extends Controller
     {
         $pageRow_records = 20;
         $num_pages = $page;
-        $startRow_records = ($num_pages -1) * $pageRow_records;
+        $startRow_records = ($num_pages - 1) * $pageRow_records;
 
-        $varieties = Varietie::all();
-//        $varieties = DB::table('varieties')
-////            ->where("varieties.deleted_at" , "=", null)
-////            ->where("somatotypes.deleted_at" , "=", null)
-//            ->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-//            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
-//            ->orderBy('id')
-//            ->get();
-
+        $varieties = Varietie::join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+//            ->where("somatotypes.deleted_at", null)
+            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+            ->orderBy('id')
+            ->get();
 
         $total_records = $varieties->count();
         $total_pages = ceil($total_records / $pageRow_records);
 
         return view('varieties.index', [
-            "varieties" => $varieties->skip($startRow_records)->take(20),
+            "varieties" => $varieties->skip($startRow_records)->take($pageRow_records),
             "total_records" => $total_records,
             "total_pages" => $total_pages,
             "num_pages" => $num_pages
@@ -93,21 +89,19 @@ class VarietiesController extends Controller
     public function show()
     {
         try {
-            $id = $_GET['id'];
+            if (!isset($_GET['id']))
+                return view('varieties.show');
+            else {
+                $id = $_GET['id'];
+                $varietie = Varietie::join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+//                    ->where("somatotypes.deleted_at", null)
+                    ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+                    ->findOrfail($id);
 
-            $varietie = Varietie::findOrfail($id);
-            return view('varieties.show', ["varietie" => $varietie]);
-//            $varietie = DB::table('varieties')
-//                ->where('id', $id)
-////                ->where("varieties.deleted_at" , "=", null)
-////                ->where("somatotypes.deleted_at" , "=", null)
-//                ->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-//                ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
-//                ->get();
-//            return view('varieties.show', ["varietie" => $varietie[0]]);
-        }
-        catch (ErrorException $e)
-        {
+                return response()->json($varietie);
+            }
+
+        } catch (ErrorException $e) {
             return abort(404);
         }
     }

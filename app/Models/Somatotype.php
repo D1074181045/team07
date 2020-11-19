@@ -10,7 +10,7 @@ class Somatotype extends Model
 {
     use HasFactory;
 //    use SoftDeletes;
-
+//
 //    protected $dates = ['deleted_at'];
     protected $primaryKey = "somatotype_id";
     protected $fillable = [

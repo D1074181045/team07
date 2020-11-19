@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{--        <title>Laravel</title>--}}
+    <title>{{ $name . " 修改" }}</title>
 
     {{--        <!-- Fonts -->--}}
     {{--        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">--}}
@@ -32,19 +32,19 @@
         </tr>
         <tr>
             <td>狗狗名稱</td>
-            <td><input type="text" name="name" id="name" value="{{ $name }}"/></td>
+            <td><input type="text" name="name" id="name" onfocus="this.select()" value="{{ $name }}"/></td>
         </tr>
         <tr>
             {{--                <td>體型編號</td><td><input type="text" name="somatotype_id" id="somatotype_id" value="{{ $somatotype_id }}" /></td>--}}
             <td>體型</td>
             <td>
-                <select name="somatotype_id" id="somatotype_id">
+                <select name="somatotype_id" id="somatotype_id" style="width: 100%">
                     @foreach($somatotypes as $somatotype)
                         @if ($somatotype->somatotype_id == $somatotype_id)
                             <option value="{{ $somatotype->somatotype_id }}"
-                                    selected>{{ $somatotype->somatotype_id }}</option>
+                                    selected>{{ $somatotype->somatotype }}</option>
                         @else
-                            <option value="{{ $somatotype->somatotype_id }}">{{ $somatotype->somatotype_id }}</option>
+                            <option value="{{ $somatotype->somatotype_id }}">{{ $somatotype->somatotype }}</option>
                         @endif
                     @endforeach
                 </select>
@@ -52,11 +52,11 @@
         </tr>
         <tr>
             <td>原產地</td>
-            <td><input type="text" name="source" id="source" value="{{ $source }}"/></td>
+            <td><input type="text" name="source" id="source" onfocus="this.select()" value="{{ $source }}"/></td>
         </tr>
         <tr>
             <td>平均壽命</td>
-            <td><input type="text" name="avg_life" id="avg_life" value="{{ $avg_life }}"/></td>
+            <td><input type="text" name="avg_life" id="avg_life" onfocus="this.select()" value="{{ $avg_life }}"/></td>
         </tr>
         <tr>
             <td colspan="2" align="center">
@@ -68,12 +68,5 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
     </table>
 </form>
-
-{{--    狗狗ID：{{ $id }}</br>--}}
-{{--    狗狗名稱：{{ $name }}</br>--}}
-{{--    體型編號：{{ $somatotype_id }}</br>--}}
-{{--    原產地：{{ $source }}</br>--}}
-{{--    平均壽命：{{ $avg_life }}</br></br>--}}
-
 </body>
 </html>

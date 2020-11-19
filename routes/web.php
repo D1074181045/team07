@@ -32,7 +32,7 @@ Route::get('varieties/create', [VarietiesController::class, 'create'])->name('va
 Route::post('varieties/store', [VarietiesController::class, 'store'])->name('varieties.store');
 // 新增
 
-Route::get('varieties', [VarietiesController::class, 'show'])->name('varieties.show');
+Route::get('varieties/show', [VarietiesController::class, 'show'])->name('varieties.show');
 // 單一查詢
 
 Route::get('varieties/{id}/edit', [VarietiesController::class, 'edit'])->name('varieties.edit');
@@ -51,7 +51,7 @@ Route::get('somatotypes/create', [SomatotypesController::class, 'create'])->name
 Route::post('somatotypes/store', [SomatotypesController::class, 'store'])->name('somatotypes.store');
 // 新增
 
-Route::get('somatotypes', [SomatotypesController::class, 'show'])->name('somatotypes.show');
+Route::get('somatotypes/show', [SomatotypesController::class, 'show'])->name('somatotypes.show');
 // 單一查詢
 
 Route::get('somatotypes/{id}/edit', [SomatotypesController::class, 'edit'])->name('somatotypes.edit');

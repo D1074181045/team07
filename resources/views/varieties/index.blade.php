@@ -42,28 +42,29 @@
     </ul>
 </div>
 
-<p align="center">目前狗狗品種數目：{{ $total_records }}，<a href="create">新增狗狗品種</a>。</p>
-
-<form action="{{ route('varieties.show') }}" method="get">
-    <table border="1" align="center">
-        <tr>
-            <td>查詢指定品種ID</td>
-            <td><input type="text" name="id" id="id" /></td>
-        </tr>
-        <tr>
-            <td colspan="2" align="center">
-                <input type="submit" value="查詢"/>
-            </td>
-        </tr>
-    </table>
-</form>
-</body></br>
+</br>
+<table border="1" align="center">
+    <tr>
+        <td>目前狗狗品種數目：<div style="color: red;display:inline;font-weight:bold;">{{ $total_records }}</div></td>
+        <td>
+            <button onclick=location.href="create">新增狗狗品種</button>
+        </td>
+    </tr>
+    <tr>
+        <td>查詢指定品種ID</td>
+        <td>
+            <button style="width: 100%" onclick=location.href="{{ route('varieties.show') }}">前往查詢</button>
+        </td>
+    </tr>
+</table>
+</body>
+</br>
 
 <table border="1" align="center">
     <tr>
         <th>狗狗ID</th>
         <th>狗狗名稱</th>
-        <th>體型編號</th>
+        <th>體型</th>
         <th>原產地</th>
         <th>平均壽命</th>
     </tr>
@@ -72,8 +73,8 @@
         <tr align="center">
             <td>{{ $varietie->id }}</td>
             <td>{{ $varietie->name }}</td>
-            <td>{{ $varietie->somatotype_id }}</td>
-{{--            <td>{{ $varietie->somatotype }}</td>--}}
+            {{--            <td>{{ $varietie->somatotype_id }}</td>--}}
+            <td>{{ $varietie->somatotype }}</td>
             <td>{{ $varietie->source }}</td>
             <td>{{ $varietie->avg_life }}</td>
             <td><a href="{{ $varietie->id }}/edit">修改</a>

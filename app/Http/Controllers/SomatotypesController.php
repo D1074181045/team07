@@ -23,7 +23,7 @@ class SomatotypesController extends Controller
         $total_pages = ceil($total_records / $pageRow_records);
 
         return view('somatotypes.index', [
-            "somatotypes" => $somatotypes->skip($startRow_records)->take(20),
+            "somatotypes" => $somatotypes->skip($startRow_records)->take($pageRow_records),
             "total_records" => $total_records,
             "total_pages" => $total_pages,
             "num_pages" => $num_pages
@@ -75,9 +75,14 @@ class SomatotypesController extends Controller
     public function show()
     {
         try {
-            $id = $_GET['id'];
-            $somatotype = Somatotype::findOrfail($id)->toArray();
-            return view('somatotypes.show', $somatotype);
+            if (!isset($_GET['id']))
+                return view('somatotypes.show');
+            else {
+                $id = $_GET['id'];
+                $somatotype = Somatotype::findOrfail($id);
+
+                return response()->json($somatotype);
+            }
         }
         catch (ErrorException $e) {
             return abort(404);
