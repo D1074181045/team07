@@ -51,7 +51,7 @@
     <tr>
         <td>目前狗狗品種數目：<div style="color: red;display:inline;font-weight:bold;">{{ $total_records }}</div></td>
         <td>
-            <button onclick=location.href="create">新增狗狗品種</button>
+            <button onclick=location.href="{{ route('varieties.create') }}">新增狗狗品種</button>
         </td>
     </tr>
     <tr>
@@ -82,8 +82,9 @@
             <td>{{ $varietie->somatotype }}</td>
             <td>{{ $varietie->source }}</td>
             <td>{{ $varietie->avg_life }}</td>
-            <td><a href="{{ $varietie->id }}/edit">修改</a>
-            <td><a href="{{ $varietie->id }}/destroy">刪除</a>
+
+            <td><a href="{{ route('varieties.edit', $varietie->id) }}">修改</a>
+            <td><a href="{{ route('varieties.destroy', $varietie->id) }}">刪除</a>
         </tr>
     @endforeach
 

@@ -53,7 +53,7 @@
     <tr>
         <td>目前狗狗體型數目：<div style="color: red;display:inline;font-weight:bold;">{{ $total_records }}</div></td>
         <td>
-            <button onclick=location.href="create">新增狗狗體型</button>
+            <button onclick=location.href="{{ route('somatotypes.create') }}">新增狗狗體型</button>
         </td>
     </tr>
     <tr>
@@ -81,8 +81,9 @@
             <td>{{ $somatotype->somatotype }}</td>
             <td>{{ $somatotype->avg_height }}</td>
             <td>{{ $somatotype->avg_weight }}</td>
-            <td><a href="{{ $somatotype->somatotype_id }}/edit">修改</a>
-            <td><a href="{{ $somatotype->somatotype_id }}/destroy">刪除</a>
+
+            <td><a href="{{ route('somatotypes.edit', $somatotype->somatotype_id) }}">修改</a>
+            <td><a href="{{ route('somatotypes.destroy', $somatotype->somatotype_id) }}">刪除</a>
         </tr>
     @endforeach
 </table>

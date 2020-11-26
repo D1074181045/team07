@@ -67,7 +67,7 @@ class VarietiesController extends Controller
         $varietie = Varietie::findOrFail($id);
         $somatotypes = Somatotype::all();
 
-        return view('varieties.edit', $varietie)->with("somatotypes", $somatotypes);
+        return view('varieties.edit', $varietie)->with(["somatotypes" => $somatotypes, 'id' => $id]);
     }
 
     public function update($id, Request $request)

@@ -25,12 +25,11 @@
 @extends('app')
 @section('title', '這是狗狗品種編輯')
 @section('title_h1', '這是狗狗品種編輯')
-@section('dog_content')
 
-{{--<h1 align="center">這是狗狗品種編輯</h1>--}}
+@section('dog_content')
 <p align="center"><a href="{{ route('varieties.index', 1) }}">返回狗狗品種首頁</a></p>
 
-<form action="update" method="post">
+{!! Form::open(['url' => route('varieties.update', $id)]) !!}
     <table border="1" align="center">
         <tr>
             <th>欄位</th>
@@ -38,7 +37,7 @@
         </tr>
         <tr>
             <td>狗狗名稱</td>
-            <td><input type="text" name="name" id="name" onfocus="this.select()" value="{{ $name }}"/></td>
+            <td>{!! Form::text('name', $name, ['onfocus' => 'this.select()']) !!}</td>
         </tr>
         <tr>
             {{--                <td>體型編號</td><td><input type="text" name="somatotype_id" id="somatotype_id" value="{{ $somatotype_id }}" /></td>--}}
@@ -58,22 +57,20 @@
         </tr>
         <tr>
             <td>原產地</td>
-            <td><input type="text" name="source" id="source" onfocus="this.select()" value="{{ $source }}"/></td>
+            <td>{!! Form::text('source', $source, ['onfocus' => 'this.select()']) !!}</td>
         </tr>
         <tr>
             <td>平均壽命</td>
-            <td><input type="text" name="avg_life" id="avg_life" onfocus="this.select()" value="{{ $avg_life }}"/></td>
+            <td>{!! Form::text('avg_life', $avg_life, ['onfocus' => 'this.select()']) !!}</td>
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <input type="submit" value="修改資料"/>
-                <input type="reset" value="重新填寫"/>
+                {!! Form::submit('更新資料') !!}
+                {!! Form::reset('重新填寫') !!}
             </td>
         </tr>
-
-        <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
     </table>
-</form>
+{!! Form::close() !!}
 @endsection
 {{--</body>--}}
 {{--</html>--}}
