@@ -108,7 +108,9 @@ class VarietiesController extends Controller
 
     public function destroy($id)
     {
-        Varietie::destroy($id);
+//        Varietie::destroy($id);
+        $varietie = Varietie::findOrFail($id);
+        $varietie->delete();
 
         return Redirect::to('/varieties/page=1');
     }

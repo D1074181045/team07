@@ -29,7 +29,7 @@
 @section('dog_content')
 <p align="center"><a href="{{ route('varieties.index', 1) }}">返回狗狗品種首頁</a></p>
 
-{!! Form::open(['url' => route('varieties.update', $id)]) !!}
+{!! Form::open(['url' => route('varieties.update', $id), 'method' => 'patch']) !!}
     <table border="1" align="center">
         <tr>
             <th>欄位</th>

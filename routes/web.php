@@ -40,10 +40,10 @@ Route::get('varieties/show', [VarietiesController::class, 'show'])->name('variet
 // 單一查詢
 
 Route::get('varieties/{id}/edit', [VarietiesController::class, 'edit'])->name('varieties.edit');
-Route::post('varieties/{id}/update', [VarietiesController::class, 'update'])->name('varieties.update');
+Route::patch('varieties/{id}/update', [VarietiesController::class, 'update'])->name('varieties.update');
 // 更新
 
-Route::get('varieties/{id}/destroy', [VarietiesController::class, 'destroy'])->name('varieties.destroy');
+Route::delete('varieties/{id}/destroy', [VarietiesController::class, 'destroy'])->name('varieties.destroy');
 // 刪除
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
@@ -59,10 +59,10 @@ Route::get('somatotypes/show', [SomatotypesController::class, 'show'])->name('so
 // 單一查詢
 
 Route::get('somatotypes/{id}/edit', [SomatotypesController::class, 'edit'])->name('somatotypes.edit');
-Route::post('somatotypes/{id}/update', [SomatotypesController::class, 'update'])->name('somatotypes.update');
+Route::patch('somatotypes/{id}/update', [SomatotypesController::class, 'update'])->name('somatotypes.update');
 // 更新
 
-Route::get('somatotypes/{id}/destroy', [SomatotypesController::class, 'destroy'])->name('somatotypes.destroy');
+Route::delete('somatotypes/{id}/destroy', [SomatotypesController::class, 'destroy'])->name('somatotypes.destroy');
 // 刪除
 
 /*-----------------------------------------------------------------------------------------------------------------------*/

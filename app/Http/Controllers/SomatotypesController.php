@@ -16,7 +16,7 @@ class SomatotypesController extends Controller
     {
         $pageRow_records = 10;
         $num_pages = $page;
-        $startRow_records = ($num_pages -1) * $pageRow_records;
+        $startRow_records = ($num_pages - 1) * $pageRow_records;
 
         $somatotypes = Somatotype::all();
         $total_records = $somatotypes->count();
@@ -91,7 +91,9 @@ class SomatotypesController extends Controller
 
     public function destroy($id)
     {
-        Somatotype::destroy($id);
+//        Somatotype::destroy($id);
+        $somatotype = Somatotype::findOrFail($id);
+        $somatotype->delete();
 
         return Redirect::to('/somatotypes/page=1');
     }
