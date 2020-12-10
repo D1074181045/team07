@@ -21,17 +21,49 @@ class VarietiesController extends Controller
         $num_pages = $page;
         $startRow_records = ($num_pages - 1) * $pageRow_records;
 
-        $varieties = Varietie::join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-//            ->where("somatotypes.deleted_at", null)
-            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
-            ->orderBy('id')
-            ->get();
+        $varieties = Varietie::AllData()->get();
+
+        $total_records = $varieties->count();
+        $total_pages = ceil($total_records / $pageRow_records);
+
+        $somatotypes = Somatotype::all();
+
+        $data = [];
+        foreach ($somatotypes as $somatotype)
+        {
+            $data[$somatotype->somatotype_id] = $somatotype->somatotype;
+        }
+
+        return view('varieties.index', [
+            "varieties" => $varieties->skip($startRow_records)->take($pageRow_records),
+            "somatotypes" => $data,
+            "total_records" => $total_records,
+            "total_pages" => $total_pages,
+            "num_pages" => $num_pages
+        ]);
+    }
+
+    public function type($page = 1)
+    {
+        $pageRow_records = 10;
+        $num_pages = $page;
+        $startRow_records = ($num_pages - 1) * $pageRow_records;
+
+        $somatotypes = Somatotype::all();
+        $varieties = Varietie::Type($_GET['somatotype_id'])->get();
+
+        $data = [];
+        foreach ($somatotypes as $somatotype)
+        {
+            $data[$somatotype->somatotype_id] = $somatotype->somatotype;
+        }
 
         $total_records = $varieties->count();
         $total_pages = ceil($total_records / $pageRow_records);
 
         return view('varieties.index', [
             "varieties" => $varieties->skip($startRow_records)->take($pageRow_records),
+            "somatotypes" => $data,
             "total_records" => $total_records,
             "total_pages" => $total_pages,
             "num_pages" => $num_pages
@@ -42,7 +74,13 @@ class VarietiesController extends Controller
     {
         $somatotypes = Somatotype::all();
 
-        return view('varieties.create', ["somatotypes" => $somatotypes]);
+        $data = [];
+        foreach ($somatotypes as $somatotype)
+        {
+            $data[$somatotype->somatotype_id] = $somatotype->somatotype;
+        }
+
+        return view('varieties.create', ["somatotypes" => $data]);
     }
 
     public function store(Request $request)
@@ -67,7 +105,13 @@ class VarietiesController extends Controller
         $varietie = Varietie::findOrFail($id);
         $somatotypes = Somatotype::all();
 
-        return view('varieties.edit', $varietie)->with(["somatotypes" => $somatotypes, 'id' => $id]);
+        $data = [];
+        foreach ($somatotypes as $somatotype)
+        {
+            $data[$somatotype->somatotype_id] = $somatotype->somatotype;
+        }
+
+        return view('varieties.edit', ["varietie" => $varietie, "somatotypes" => $data, 'id' => $id]);
     }
 
     public function update($id, Request $request)

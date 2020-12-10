@@ -52,9 +52,9 @@ class SomatotypesController extends Controller
 
     public function edit($id)
     {
-        $somatotyp = Somatotype::findOrFail($id);
+        $somatotype = Somatotype::findOrFail($id);
 
-        return view('somatotypes.edit', $somatotyp)->with('id', $id);
+        return view('somatotypes.edit', ['somatotype' => $somatotype, 'id' => $id]);
     }
 
     public function update($id, Request $request)

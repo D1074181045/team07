@@ -23,14 +23,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Varietie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Varietie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/varieties/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/varieties/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +165,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/varieties" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -180,9 +178,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\wamp64\www\team07" />
       <recent name="D:\wamp64\www\team07\resources\views\varieties" />
       <recent name="D:\wamp64\www\team07\resources\views\somatotypes" />
+      <recent name="D:\wamp64\www\team07" />
     </key>
   </component>
   <component name="RunManager">
@@ -234,7 +232,8 @@
       <workItem from="1605767107231" duration="4638000" />
       <workItem from="1605838504040" duration="1988000" />
       <workItem from="1606354934022" duration="10792000" />
-      <workItem from="1606959070354" duration="15338000" />
+      <workItem from="1606959070354" duration="15442000" />
+      <workItem from="1607564476517" duration="18169000" />
     </task>
     <servers />
   </component>

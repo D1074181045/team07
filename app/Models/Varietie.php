@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Http\Request;
 
 class Varietie extends Model
 {
@@ -21,4 +22,25 @@ class Varietie extends Model
         "updated_at"
     ];
 
+
+
+    public function scopeAllData($query) {
+        $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+//            ->where("somatotypes.deleted_at", null)
+            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+            ->orderBy('id');
+    }
+
+    public function scopeType($query, $somatotype_id) {
+        $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+            ->where('varieties.somatotype_id', $somatotype_id)
+            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+            ->orderBy('id');
+    }
+
+    public function scopeAllSomatotypes($query) {
+        $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+            ->groupby('somatotype')
+            ->select('somatotype');
+    }
 }
