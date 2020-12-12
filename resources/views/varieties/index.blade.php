@@ -4,39 +4,32 @@
 @section('dog_content')
     <table border="1" align="center">
         <tr>
-            <td>目前狗狗品種數目：
-                <div style="color: red;display:inline;font-weight:bold;">{{ $total_records }}</div>
-            </td>
-            <td>
-                <button onclick=location.href="{{ route('varieties.create') }}">新增狗狗品種</button>
-            </td>
+            <td>目前狗狗品種數目：<div style="color: red;display:inline;font-weight:bold;">{{ $total_records }}</div></td>
+            <td><button onclick=location.href="{{ route('varieties.create') }}">新增狗狗品種</button></td>
         </tr>
         <tr>
-            <td>查詢指定品種ID</td>
-            <td>
-                <button style="width: 100%" onclick=location.href="{{ route('varieties.show') }}">前往查詢</button>
-            </td>
+            <td>查詢指定品種</td>
+            <td><button style="width: 100%" onclick=location.href="{{ route('varieties.show') }}">前往查詢</button></td>
         </tr>
         <tr>
             {!! Form::open(['action' => ['\App\Http\Controllers\VarietiesController@index', 1], 'method' => 'get']) !!}
             <td>查詢全部</td>
-            <td>
-                {!! Form::submit('查詢') !!}
-            </td>
+            <td>{!! Form::submit('查詢') !!}</td>
             {!! Form::close() !!}
         </tr>
         <tr>
             {!! Form::open(['action' => ['\App\Http\Controllers\VarietiesController@type', 1], 'method' => 'get']) !!}
-            <td>查詢指定體型
-                {!! Form::select('somatotype_id', $somatotypes) !!}
-            </td>
-            <td>
-                {!! Form::submit('查詢') !!}
-            </td>
+            <td>查詢指定體型　{!! Form::select('somatotype_id', $somatotypes) !!}</td>
+            <td>{!! Form::submit('查詢') !!}</td>
+            {!! Form::close() !!}
+        </tr>
+        <tr>
+            {!! Form::open(['action' => ['\App\Http\Controllers\VarietiesController@source', 1], 'method' => 'get']) !!}
+            <td>查詢指定原產地{!! Form::select('source', $source) !!}</td>
+            <td>{!! Form::submit('查詢') !!}</td>
             {!! Form::close() !!}
         </tr>
     </table>
-    </body>
     </br>
 
     <table border="1" align="center">

@@ -11,7 +11,11 @@
     </div>
 
     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-        2020-11-20
+        @if (\App\Models\Varietie::max('updated_at') > \App\Models\Somatotype::max('updated_at'))
+            {{ \App\Models\Varietie::max('updated_at') }}
+        @else
+            {{ \App\Models\Somatotype::max('updated_at') }}
+        @endif
     </div>
 </div>
 

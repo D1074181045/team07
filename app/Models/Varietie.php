@@ -22,7 +22,17 @@ class Varietie extends Model
         "updated_at"
     ];
 
+    public function scopeSource($query, $source) {
+        $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+            ->where('varieties.source', $source)
+            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+            ->orderBy('id');
+    }
 
+    public function scopeAllSource($query) {
+        $query->groupby('source')
+            ->select('source');
+    }
 
     public function scopeAllData($query) {
         $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')

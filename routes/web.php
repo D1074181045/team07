@@ -29,6 +29,9 @@ Route::get('welcome', function () {
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
+Route::get('varieties/source/page={page}', [VarietiesController::class, 'source'])->name('varieties.source');
+// 查詢指定原產地
+
 Route::get('varieties/type/page={page}', [VarietiesController::class, 'type'])->name('varieties.type');
 // 查詢指定體型
 

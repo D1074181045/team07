@@ -5,13 +5,9 @@
 <p align="center"><a href="{{ route('somatotypes.index', 1) }}">返回狗狗體型首頁</a></p>
 <table border="1" align="center">
     <tr>
-        <td>查詢指定體型ID</td>
-        <td><input type="text" name="id" id="id" onfocus="this.select()"/></td>
-    </tr>
-    <tr>
-        <td colspan="2" align="center">
-            <button id="search" name="search">查詢</button>
-        </td>
+        <td>查詢指定體型</td>
+        <td>{!! Form::select('somatotypes_id', $somatotypes_id, null, ['id' => 'somatotypes_id']) !!}</td>
+        <td><button id="search" name="search">查詢</button></td>
     </tr>
 </table>
 </body>
@@ -43,10 +39,9 @@
 
 <script type="text/JavaScript">
     document.getElementById("search").onclick = function () {
-
         // 發送 Ajax 查詢請求並處理
         var request = new XMLHttpRequest();
-        request.open("GET", "{{ route('somatotypes.show') }}" + "?id=" + document.getElementById("id").value);
+        request.open("GET", "{{ route('somatotypes.show') }}" + "?id=" + document.getElementById("somatotypes_id").value);
         request.send();
         request.onreadystatechange = function () {
             // 伺服器請求完成

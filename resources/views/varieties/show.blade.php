@@ -8,15 +8,10 @@
 <table border="1" align="center">
     <tr>
         <td>查詢指定品種ID</td>
-        <td><input type="text" name="id" id="id" onfocus="this.select()"/></td>
-    </tr>
-    <tr>
-        <td colspan="2" align="center">
-            <button id="search" name="search">查詢</button>
-        </td>
-    </tr>
+        <td>{!! Form::select('id', $varieties_id, null, ['id' => 'id']) !!}</td>
+        <td><button id="search" name="search">查詢</button></td>
+   </tr>
 </table>
-</body>
 </br>
 
 <table border="1" align="center">
@@ -32,9 +27,6 @@
         <td>狗狗名稱</td>
         <td id="name"></td>
     </tr>
-    {{--        <tr>--}}
-    {{--            <td>體型編號</td><td>{{ $varietie->somatotype_id }}</td>--}}
-    {{--        </tr>--}}
     <tr>
         <td>體型</td>
         <td id="somatotype"></td>

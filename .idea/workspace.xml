@@ -24,11 +24,12 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Varietie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Varietie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/varieties/type.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,6 +235,8 @@
       <workItem from="1606354934022" duration="10792000" />
       <workItem from="1606959070354" duration="15442000" />
       <workItem from="1607564476517" duration="18169000" />
+      <workItem from="1607604243228" duration="996000" />
+      <workItem from="1607744768712" duration="5924000" />
     </task>
     <servers />
   </component>
@@ -269,6 +272,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602725923906" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1607746733438">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607746733438" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1606364480069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

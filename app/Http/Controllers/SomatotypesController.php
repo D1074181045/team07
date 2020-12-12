@@ -38,11 +38,16 @@ class SomatotypesController extends Controller
     public function store(Request $request)
     {
         try {
+            $somatotype = $request->input("somatotype");
+            $avg_height = $request->input("avg_height");
+            $avg_weight = $request->input("avg_weight");
+
             Somatotype::create([
-                'somatotype' => $request->input("somatotype"),
-                'avg_height' => $request->input("avg_height"),
-                'avg_weight' => $request->input("avg_weight"),
+                'somatotype' => $somatotype,
+                'avg_height' => $avg_height,
+                'avg_weight' => $avg_weight,
             ]);
+
         } catch (QueryException $e) {
 
         } finally {
@@ -61,6 +66,7 @@ class SomatotypesController extends Controller
     {
         try {
             $somatotyp = Somatotype::findOrFail($id);
+
             $somatotyp->somatotype = $request->input("somatotype");
             $somatotyp->avg_height = $request->input("avg_height");
             $somatotyp->avg_weight = $request->input("avg_weight");
@@ -75,8 +81,16 @@ class SomatotypesController extends Controller
     public function show()
     {
         try {
-            if (!isset($_GET['id']))
-                return view('somatotypes.show');
+            if (!isset($_GET['id'])) {
+                $somatotypes = Somatotype::all();
+
+                $data = [];
+                foreach ($somatotypes as $somatotype) {
+                    $data[$somatotype->somatotype_id] = $somatotype->somatotype;
+                }
+
+                return view('somatotypes.show', ['somatotypes_id' => $data]);
+            }
             else {
                 $id = $_GET['id'];
                 $somatotype = Somatotype::findOrfail($id);

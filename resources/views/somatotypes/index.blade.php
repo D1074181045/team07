@@ -4,18 +4,12 @@
 @section('dog_content')
     <table border="1" align="center">
         <tr>
-            <td>目前狗狗體型數目：
-                <div style="color: red;display:inline;font-weight:bold;">{{ $total_records }}</div>
-            </td>
-            <td>
-                <button onclick=location.href="{{ route('somatotypes.create') }}">新增狗狗體型</button>
-            </td>
+            <td>目前狗狗體型數目：<div style="color: red;display:inline;font-weight:bold;">{{ $total_records }}</div></td>
+            <td><button onclick=location.href="{{ route('somatotypes.create') }}">新增狗狗體型</button></td>
         </tr>
         <tr>
-            <td>查詢指定體型ID</td>
-            <td>
-                <button style="width: 100%" onclick=location.href="{{ route('somatotypes.show') }}">前往查詢</button>
-            </td>
+            <td>查詢指定體型</td>
+            <td><button style="width: 100%" onclick=location.href="{{ route('somatotypes.show') }}">前往查詢</button></td>
         </tr>
     </table>
 
