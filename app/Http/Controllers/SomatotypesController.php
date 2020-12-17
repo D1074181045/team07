@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateSomatotypeRequest;
 use App\Models\Somatotype;
 use Carbon\Carbon;
 use ErrorException;
@@ -35,7 +36,7 @@ class SomatotypesController extends Controller
         return view('somatotypes.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateSomatotypeRequest $request)
     {
         try {
             $somatotype = $request->input("somatotype");
@@ -62,7 +63,7 @@ class SomatotypesController extends Controller
         return view('somatotypes.edit', ['somatotype' => $somatotype, 'id' => $id]);
     }
 
-    public function update($id, Request $request)
+    public function update($id, CreateSomatotypeRequest $request)
     {
         try {
             $somatotyp = Somatotype::findOrFail($id);

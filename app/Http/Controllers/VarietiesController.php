@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateVarietieRequest;
 use App\Models\Somatotype;
 use App\Models\Varietie;
 use Carbon\Carbon;
@@ -117,7 +118,7 @@ class VarietiesController extends Controller
         return view('varieties.create', ["somatotypes" => $data]);
     }
 
-    public function store(Request $request)
+    public function store(CreateVarietieRequest $request)
     {
         try {
             $name = $request->input('name');
@@ -151,7 +152,7 @@ class VarietiesController extends Controller
         return view('varieties.edit', ["varietie" => $varietie, "somatotypes" => $data, 'id' => $id]);
     }
 
-    public function update($id, Request $request)
+    public function update($id, CreateVarietieRequest $request)
     {
         try {
             $varietie = Varietie::findOrFail($id);
