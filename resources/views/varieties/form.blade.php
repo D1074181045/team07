@@ -22,6 +22,14 @@
         <td>{!! Form::text('avg_life', null, ['onfocus' => 'this.select()']) !!}</td>
     </tr>
     <tr>
+        <td>發現日期</td>
+        <td>{!! Form::date('find_date', null, ['onfocus' => 'this.select()']) !!}</td>
+    </tr>
+    <tr>
+        <td>登錄日期</td>
+        <td>{!! Form::date('land_date', null, ['onfocus' => 'this.select()']) !!}</td>
+    </tr>
+    <tr>
         <td colspan="2" align="center">
             {!! Form::submit($submitButtonText) !!}
             {!! Form::reset('重新填寫') !!}

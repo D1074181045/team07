@@ -27,7 +27,7 @@ class CreateSomatotypeRequest extends FormRequest
             //
             'somatotype' => 'required|string|min:1|max:50',
             'avg_height' => 'required|numeric|min:1|max:200',
-            'avg_weight' => 'required|numeric|min:1|max:150'
+            'avg_weight' => 'required|numeric|min:1|max:150|lt:avg_height'
         ];
     }
 
@@ -42,7 +42,8 @@ class CreateSomatotypeRequest extends FormRequest
             'avg_height.min' => '平均身高必須為 1~200 之間',
             'avg_height.max' => '平均身高必須為 1~200 之間',
             'avg_weight.min' => '平均體重必須為 1~150 之間',
-            'avg_weight.max' => '平均體重必須為 1~150 之間'
+            'avg_weight.max' => '平均體重必須為 1~150 之間',
+            'avg_weight.lt' => '身高必須大於體重'
         ];
     }
 }

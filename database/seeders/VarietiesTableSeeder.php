@@ -48,13 +48,16 @@ class VarietiesTableSeeder extends Seeder
         for ($i=0; $i<30; $i++) {
             $name = $this->generateRandomName();
             $source = $this->generateRandomSource();
-
+            $find_date = Carbon::now()->subYears(rand(48, 60))->subMonths(rand(0, 12))->subRealDays(rand(0,31));
+            $land_date = Carbon::now()->subYears(rand(18, 30))->subMonths(rand(0, 12))->subRealDays(rand(0,31));
             $random_datetime = Carbon::now(8)->subMinutes(rand(1, 55));;
             DB::table('varieties')->insert([
                 'name' => $name,
                 'somatotype_id' => rand(1, 7),
                 'source' => $source,
                 'avg_life' => rand(1, 80),
+                'land_date' => $land_date,
+                'find_date' => $find_date,
                 'created_at' => $random_datetime,
                 'updated_at' => $random_datetime
             ]);

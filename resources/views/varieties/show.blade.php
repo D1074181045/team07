@@ -39,6 +39,14 @@
         <td>平均壽命</td>
         <td id="avg_life"></td>
     </tr>
+    <tr>
+        <td>發現日期</td>
+        <td id="find_date"></td>
+    </tr>
+    <tr>
+        <td>登陸日期</td>
+        <td id="land_date"></td>
+    </tr>
 </table>
 
 {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>--}}
@@ -85,7 +93,7 @@
                     if (type.indexOf("application/json") === 0) {
                         var data = JSON.parse(request.responseText);
 
-                        set(data.id, data.name, data.somatotype, data.source, data.avg_life);
+                        set(data);
                     }
                 } else {
                     document.getElementById("id").value = "未搜尋到此資料";
@@ -101,15 +109,29 @@
         document.getElementById("somatotype").innerHTML = "";
         document.getElementById("source").innerHTML = "";
         document.getElementById("avg_life").innerHTML = "";
+        document.getElementById("find_date").innerHTML = "";
+        document.getElementById("land_date").innerHTML = "";
     }
 
-    function set(id, name, somatotype, source, avg_life) {
-        document.getElementById("_id").innerHTML = id;
-        document.getElementById("name").innerHTML = name;
-        document.getElementById("somatotype").innerHTML = somatotype;
-        document.getElementById("source").innerHTML = source;
-        document.getElementById("avg_life").innerHTML = avg_life;
+    function set(data) {
+        document.getElementById("_id").innerHTML = data.id;
+        document.getElementById("name").innerHTML = data.name;
+        document.getElementById("somatotype").innerHTML = data.somatotype;
+        document.getElementById("source").innerHTML = data.source;
+        document.getElementById("avg_life").innerHTML = data.avg_life;
+        document.getElementById("find_date").innerHTML = data.find_date;
+        document.getElementById("land_date").innerHTML = data.land_date;
     }
+    //
+    // function set(id, name, somatotype, source, avg_life, find_date, land_date) {
+    //     document.getElementById("_id").innerHTML = id;
+    //     document.getElementById("name").innerHTML = name;
+    //     document.getElementById("somatotype").innerHTML = somatotype;
+    //     document.getElementById("source").innerHTML = source;
+    //     document.getElementById("avg_life").innerHTML = avg_life;
+    //     document.getElementById("find_date").innerHTML = find_date;
+    //     document.getElementById("land_date").innerHTML = land_date;
+    // }
 
 </script>
 

@@ -23,10 +23,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateSomatotypeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateSomatotypeRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateVarietieRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateVarietieRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Somatotype.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Somatotype.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Varietie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Varietie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_22_055327_create_varieties_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_22_055327_create_varieties_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/VarietiesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/VarietiesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/somatotypes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/somatotypes/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/varieties/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +171,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/varieties" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/somatotypes" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -175,8 +184,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\wamp64\www\team07\resources\views\varieties" />
       <recent name="D:\wamp64\www\team07\resources\views\somatotypes" />
+      <recent name="D:\wamp64\www\team07\resources\views\varieties" />
       <recent name="D:\wamp64\www\team07" />
     </key>
   </component>
@@ -233,6 +242,7 @@
       <workItem from="1607564476517" duration="18169000" />
       <workItem from="1607604243228" duration="996000" />
       <workItem from="1607744768712" duration="5924000" />
+      <workItem from="1608773836101" duration="10789000" />
     </task>
     <servers />
   </component>
@@ -252,10 +262,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605246988615">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608788018904">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605246988615" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608788018904" />
     <state x="725" y="432" key="ComposerInitDialogKey" timestamp="1606355221837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -272,9 +282,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607746733438" />
-    <state x="623" y="225" key="search.everywhere.popup" timestamp="1606364480069">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608789548920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1606364480069" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608789548920" />
   </component>
 </project>

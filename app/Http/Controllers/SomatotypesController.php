@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateSomatotypeRequest;
 use App\Models\Somatotype;
+use App\Models\Varietie;
 use Carbon\Carbon;
 use ErrorException;
 use Illuminate\Database\QueryException;
@@ -100,6 +101,22 @@ class SomatotypesController extends Controller
             }
         }
         catch (ErrorException $e) {
+            return abort(404);
+        }
+    }
+
+    public function show2($id)
+    {
+        try {
+            $somatotype = Somatotype::find($id);
+            $varieties = $somatotype->Varieties;
+
+            return view('somatotypes.show2', [
+                'somatotype' => $somatotype,
+                'varieties' => $varieties]
+            );
+
+        } catch (ErrorException $e) {
             return abort(404);
         }
     }

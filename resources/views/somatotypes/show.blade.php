@@ -55,7 +55,7 @@
                     if (type.indexOf("application/json") === 0) {
                         var data = JSON.parse(request.responseText);
 
-                        set(data.somatotype_id, data.somatotype, data.avg_height, data.avg_weight);
+                        set(data);
 
                     }
                 } else {
@@ -73,11 +73,11 @@
         document.getElementById("avg_weight").innerHTML = "";
     }
 
-    function set(somatotype_id, somatotype, avg_height, avg_weight){
-        document.getElementById("somatotype_id").innerHTML = somatotype_id;
-        document.getElementById("somatotype").innerHTML = somatotype;
-        document.getElementById("avg_height").innerHTML = avg_height;
-        document.getElementById("avg_weight").innerHTML = avg_weight;
+    function set(data){
+        document.getElementById("somatotype_id").innerHTML = data.somatotype_id;
+        document.getElementById("somatotype").innerHTML = data.somatotype;
+        document.getElementById("avg_height").innerHTML = data.avg_height;
+        document.getElementById("avg_weight").innerHTML = data.avg_weight;
     }
 
 </script>

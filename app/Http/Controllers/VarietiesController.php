@@ -125,12 +125,16 @@ class VarietiesController extends Controller
             $somatotype_id = $request->input('somatotype_id');
             $source = $request->input('source');
             $avg_life = $request->input('avg_life');
+            $find_date = $request->input('find_date');
+            $land_date = $request->input('land_date');
 
             Varietie::create([
                 "name" => $name,
                 "somatotype_id" => $somatotype_id,
                 "source" => $source,
                 "avg_life" => $avg_life,
+                "find_date" => $find_date,
+                "land_date" => $land_date
             ]);
         } catch (QueryException $e) {
 
@@ -161,6 +165,8 @@ class VarietiesController extends Controller
             $varietie->somatotype_id = $request->input('somatotype_id');
             $varietie->source = $request->input('source');
             $varietie->avg_life = $request->input('avg_life');
+            $varietie->find_date = $request->input('find_date');
+            $varietie->land_date = $request->input('land_date');
             $varietie->save();
         } catch (QueryException $e) {
 

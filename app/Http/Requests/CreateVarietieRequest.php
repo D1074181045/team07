@@ -28,7 +28,9 @@ class CreateVarietieRequest extends FormRequest
             'name' => 'required|string|min:1|max:50',
             'somatotype_id' => 'required',
             'source' => 'required',
-            'avg_life' => 'required|numeric|min:1|max:100'
+            'avg_life' => 'required|numeric|min:1|max:100',
+            'find_date' => 'nullable|dateearliter:land_date',
+            'land_date' => 'nullable',
         ];
     }
 
@@ -42,7 +44,8 @@ class CreateVarietieRequest extends FormRequest
             'name.min' => '狗狗名稱必須為 1~50 字元之間',
             'name.max' => '狗狗名稱必須為 1~50 字元之間',
             'avg_life.min' => '平均壽命必須為 1~100 之間',
-            'avg_life.max' => '平均壽命必須為 1~100 之間'
+            'avg_life.max' => '平均壽命必須為 1~100 之間',
+            'find_date.dateearliter' => '登陸日期不能比發現日期小'
         ];
     }
 }

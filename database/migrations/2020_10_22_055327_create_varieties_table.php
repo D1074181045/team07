@@ -19,6 +19,9 @@ class CreateVarietiesTable extends Migration
             $table->bigInteger('somatotype_id')->unsigned()->comment('體型編號');
             $table->string('source', 60)->comment('原產地');
             $table->tinyInteger('avg_life')->unsigned()->comment('平均壽命');
+            $table->date('find_date')->nullable()->comment('發現日期');
+            $table->date('land_date')->nullable()->comment('登陸日期');
+
             $table->foreign('somatotype_id')->on('somatotypes')->references('somatotype_id')->onDelete('cascade');
             $table->timestamps();
 //            $table->softDeletes();

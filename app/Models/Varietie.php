@@ -18,6 +18,8 @@ class Varietie extends Model
         "somatotype_id",
         "source",
         "avg_life",
+        "find_date",
+        "land_date",
         "created_at",
         "updated_at"
     ];
@@ -25,7 +27,7 @@ class Varietie extends Model
     public function scopeSource($query, $source) {
         $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
             ->where('varieties.source', $source)
-            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life', 'find_date', 'land_date')
             ->orderBy('id');
     }
 
@@ -37,14 +39,14 @@ class Varietie extends Model
     public function scopeAllData($query) {
         $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
 //            ->where("somatotypes.deleted_at", null)
-            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life', 'find_date', 'land_date')
             ->orderBy('id');
     }
 
     public function scopeType($query, $somatotype_id) {
         $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
             ->where('varieties.somatotype_id', $somatotype_id)
-            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life')
+            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life', 'find_date', 'land_date')
             ->orderBy('id');
     }
 

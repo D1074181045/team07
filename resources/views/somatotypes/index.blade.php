@@ -21,7 +21,7 @@
             <th>體型</th>
             <th>平均身高</th>
             <th>平均體重</th>
-            <th colspan="2">操作</th>
+            <th colspan="3">操作</th>
         </tr>
 
         </form>
@@ -32,19 +32,17 @@
                 <td>{{ $somatotype->avg_height }}</td>
                 <td>{{ $somatotype->avg_weight }}</td>
 
+
                 <td>
-{{--                    <a href="{{ route('somatotypes.edit', $somatotype->somatotype_id) }}">修改</a>--}}
+                    <button onclick=location.href="{{ route('somatotypes.show2', $somatotype->somatotype_id) }}">顯示</button>
+                </td>
+                <td>
                     <button onclick=location.href="{{ route('somatotypes.edit', $somatotype->somatotype_id) }}">修改</button>
                 </td>
                 {!! Form::open(['url' => route('somatotypes.destroy', $somatotype->somatotype_id), 'method' => 'delete']) !!}
-{{--                <form action="{{ route('somatotypes.destroy', $somatotype->somatotype_id) }}" method="POST">--}}
                     <td>
-{{--                        <a href="{{ route('somatotypes.destroy', $somatotype->somatotype_id) }}">刪除</a>--}}
                         <input type="submit" value="刪除"/>
                     </td>
-{{--                    @method('delete')--}}
-{{--                    @csrf--}}
-{{--                </form>--}}
                 {!! Form::close() !!}
             </tr>
         @endforeach

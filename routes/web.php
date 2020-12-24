@@ -29,14 +29,14 @@ Route::get('welcome', function () {
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
 
+Route::get('varieties/page={page}', [VarietiesController::class, 'index'])->name('varieties.index');
+// 查詢
+
 Route::get('varieties/source/page={page}', [VarietiesController::class, 'source'])->name('varieties.source');
 // 查詢指定原產地
 
 Route::get('varieties/type/page={page}', [VarietiesController::class, 'type'])->name('varieties.type');
 // 查詢指定體型
-
-Route::get('varieties/page={page}', [VarietiesController::class, 'index'])->name('varieties.index');
-// 查詢
 
 Route::get('varieties/create', [VarietiesController::class, 'create'])->name('varieties.create');
 Route::post('varieties/store', [VarietiesController::class, 'store'])->name('varieties.store');
@@ -63,6 +63,8 @@ Route::post('somatotypes/store', [SomatotypesController::class, 'store'])->name(
 
 Route::get('somatotypes/show', [SomatotypesController::class, 'show'])->name('somatotypes.show');
 // 單一查詢
+Route::get('somatotypes/{id}', [SomatotypesController::class, 'show2'])->name('somatotypes.show2');
+// 單一查詢2
 
 Route::get('somatotypes/{id}/edit', [SomatotypesController::class, 'edit'])->name('somatotypes.edit');
 Route::patch('somatotypes/{id}/update', [SomatotypesController::class, 'update'])->name('somatotypes.update');

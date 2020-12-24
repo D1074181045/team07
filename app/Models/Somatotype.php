@@ -18,4 +18,8 @@ class Somatotype extends Model
         'avg_height',
         'avg_weight'
     ];
+
+    public function Varieties() {
+        return $this->hasMany('App\Models\Varietie', 'somatotype_id');
+    }
 }

@@ -39,6 +39,8 @@
             <th>體型</th>
             <th>原產地</th>
             <th>平均壽命</th>
+            <th>發現日期</th>
+            <th>登陸日期</th>
             <th colspan="2">操作</th>
         </tr>
         @if (isset($varieties))
@@ -50,6 +52,8 @@
                     <td>{{ $varietie->somatotype }}</td>
                     <td>{{ $varietie->source }}</td>
                     <td>{{ $varietie->avg_life }}</td>
+                    <td>{{ $varietie->find_date }}</td>
+                    <td>{{ $varietie->land_date }}</td>
                     <td>
                         <button onclick=location.href="{{ route('varieties.edit', $varietie->id) }}">修改</button>
                     </td>
