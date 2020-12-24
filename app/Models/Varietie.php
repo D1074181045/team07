@@ -24,10 +24,12 @@ class Varietie extends Model
         "updated_at"
     ];
 
+    public function Somatotype() {
+        return $this->belongsTo('App\Models\Somatotype', 'somatotype_id', 'somatotype_id');
+    }
+
     public function scopeSource($query, $source) {
-        $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-            ->where('varieties.source', $source)
-            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life', 'find_date', 'land_date')
+        $query->where('varieties.source', $source)
             ->orderBy('id');
     }
 
@@ -36,23 +38,13 @@ class Varietie extends Model
             ->select('source');
     }
 
-    public function scopeAllData($query) {
-        $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-//            ->where("somatotypes.deleted_at", null)
-            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life', 'find_date', 'land_date')
-            ->orderBy('id');
-    }
-
     public function scopeType($query, $somatotype_id) {
-        $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-            ->where('varieties.somatotype_id', $somatotype_id)
-            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life', 'find_date', 'land_date')
+        $query->where('varieties.somatotype_id', $somatotype_id)
             ->orderBy('id');
     }
 
     public function scopeAllSomatotypes($query) {
-        $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
-            ->groupby('somatotype')
+        $query->groupby('somatotype')
             ->select('somatotype');
     }
 }

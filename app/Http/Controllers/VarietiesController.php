@@ -37,7 +37,7 @@ class VarietiesController extends Controller
         $source = Varietie::Allsource()->get();
         $source = $this->form_select($source, 'source', 'source');
 
-        $varieties = Varietie::AllData()->get();
+        $varieties = Varietie::all();
 
         $total_records = $varieties->count();
         $total_pages = ceil($total_records / $pageRow_records);

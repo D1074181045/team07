@@ -20,6 +20,6 @@ class Somatotype extends Model
     ];
 
     public function Varieties() {
-        return $this->hasMany('App\Models\Varietie', 'somatotype_id');
+        return $this->hasMany('App\Models\Varietie', 'somatotype_id', 'somatotype_id');
     }
 }
