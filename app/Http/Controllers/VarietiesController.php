@@ -199,6 +199,17 @@ class VarietiesController extends Controller
         }
     }
 
+    public function show2($id)
+    {
+        try {
+            $varietie = Varietie::find($id);
+
+            return view('varieties.show2', ['varietie' => $varietie]);
+        } catch (ErrorException $e) {
+            return abort(404);
+        }
+    }
+
     public function destroy($id)
     {
 //        Varietie::destroy($id);

@@ -45,6 +45,9 @@ Route::post('varieties/store', [VarietiesController::class, 'store'])->name('var
 Route::get('varieties/show', [VarietiesController::class, 'show'])->name('varieties.show');
 // 單一查詢
 
+Route::get('varieties/{id}', [VarietiesController::class, 'show2'])->name('varieties.show2');
+// 單一查詢2
+
 Route::get('varieties/{id}/edit', [VarietiesController::class, 'edit'])->name('varieties.edit');
 Route::patch('varieties/{id}/update', [VarietiesController::class, 'update'])->name('varieties.update');
 // 更新

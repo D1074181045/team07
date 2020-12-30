@@ -54,6 +54,9 @@
                     <td>{{ $varietie->find_date }}</td>
                     <td>{{ $varietie->land_date }}</td>
                     <td>
+                        <button onclick=location.href="{{ route('varieties.show2', $varietie->id) }}">顯示</button>
+                    </td>
+                    <td>
                         <button onclick=location.href="{{ route('varieties.edit', $varietie->id) }}">修改</button>
                     </td>
                     {!! Form::open(['url' => route('varieties.destroy', $varietie->id), 'method' => 'delete']) !!}

@@ -122,16 +122,6 @@
         document.getElementById("find_date").innerHTML = data.find_date;
         document.getElementById("land_date").innerHTML = data.land_date;
     }
-    //
-    // function set(id, name, somatotype, source, avg_life, find_date, land_date) {
-    //     document.getElementById("_id").innerHTML = id;
-    //     document.getElementById("name").innerHTML = name;
-    //     document.getElementById("somatotype").innerHTML = somatotype;
-    //     document.getElementById("source").innerHTML = source;
-    //     document.getElementById("avg_life").innerHTML = avg_life;
-    //     document.getElementById("find_date").innerHTML = find_date;
-    //     document.getElementById("land_date").innerHTML = land_date;
-    // }
 
 </script>
 

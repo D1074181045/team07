@@ -23,6 +23,12 @@ class Varietie extends Model
         "created_at",
         "updated_at"
     ];
+    public function scopeAllData($query) {
+        $query->join('somatotypes', 'varieties.somatotype_id', '=', 'somatotypes.somatotype_id')
+//            ->where("somatotypes.deleted_at", null)
+            ->select('id', 'name', 'varieties.somatotype_id', 'somatotype', 'source', 'avg_life', 'find_date', 'land_date')
+            ->orderBy('id');
+    }
 
     public function Somatotype() {
         return $this->belongsTo('App\Models\Somatotype', 'somatotype_id', 'somatotype_id');
