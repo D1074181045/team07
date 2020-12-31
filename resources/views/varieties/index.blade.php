@@ -48,7 +48,7 @@
                 <tr align="center">
                     <td>{{ $varietie->id }}</td>
                     <td>{{ $varietie->name }}</td>
-                    <td>{{ $varietie->Somatotype->somatotype }}</td>
+                    <td>{{ $varietie->Somatotype['somatotype'] }}</td>
                     <td>{{ $varietie->source }}</td>
                     <td>{{ $varietie->avg_life }}</td>
                     <td>{{ $varietie->find_date }}</td>

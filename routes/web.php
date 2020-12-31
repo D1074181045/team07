@@ -77,3 +77,7 @@ Route::delete('somatotypes/{id}/destroy', [SomatotypesController::class, 'destro
 // 刪除
 
 /*-----------------------------------------------------------------------------------------------------------------------*/
+
+Route::get('/getCSRFToken', function () {
+    return csrf_token();
+});

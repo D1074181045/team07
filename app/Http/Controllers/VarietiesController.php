@@ -7,6 +7,7 @@ use App\Models\Somatotype;
 use App\Models\Varietie;
 use Carbon\Carbon;
 use ErrorException;
+use http\Env\Response;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -207,6 +208,53 @@ class VarietiesController extends Controller
             return view('varieties.show2', ['varietie' => $varietie]);
         } catch (ErrorException $e) {
             return abort(404);
+        }
+    }
+
+    public function api_update(Request $request) {
+        $varietie = Varietie::find($request->input('id'));
+
+        if ($varietie == null) {
+            return response()->json([
+                'status' => 0
+            ]);
+        }
+
+        $varietie->name = $request->input('name');
+        $varietie->somatotype_id = $request->input('somatotype_id');
+        $varietie->source = $request->input('source');
+        $varietie->avg_life = $request->input('avg_life');
+        $varietie->find_date = $request->input('find_date');
+        $varietie->land_date = $request->input('land_date');
+
+        if ($varietie->save()) {
+            return response()->json([
+                'status' => 1
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0
+            ]);
+        }
+    }
+
+    public function api_varieties() {
+        return Varietie::all();
+    }
+
+    public function api_delete(Request $request) {
+        $varietie = Varietie::find($request->input('id'));
+
+        if ($varietie == null) {
+            return response()->json([
+                'status' => 0
+            ]);
+        }
+
+        if ($varietie->delete()) {
+            return response()->json([
+                'status' => 1
+            ]);
         }
     }
 

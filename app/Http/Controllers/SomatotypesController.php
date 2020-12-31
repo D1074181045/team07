@@ -121,6 +121,50 @@ class SomatotypesController extends Controller
         }
     }
 
+    public function api_update(Request $request) {
+        $somatotype = Somatotype::find($request->input('somatotype_id'));
+
+        if ($somatotype == null) {
+            return response()->json([
+                'status' => 0
+            ]);
+        }
+
+        $somatotype->somatotype = $request->input("somatotype");
+        $somatotype->avg_height = $request->input("avg_height");
+        $somatotype->avg_weight = $request->input("avg_weight");
+
+        if ($somatotype->save()) {
+            return response()->json([
+                'status' => 1
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0
+            ]);
+        }
+    }
+
+    public function api_somatotypes() {
+        return Somatotype::all();
+    }
+
+    public function api_delete(Request $request) {
+        $somatotype = Somatotype::find($request->input('somatotype_id'));
+
+        if ($somatotype == null) {
+            return response()->json([
+                'status' => 0
+            ]);
+        }
+
+        if ($somatotype->delete()) {
+            return response()->json([
+                'status' => 1
+            ]);
+        }
+    }
+
     public function destroy($id)
     {
 //        Somatotype::destroy($id);

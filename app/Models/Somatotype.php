@@ -22,4 +22,9 @@ class Somatotype extends Model
     public function Varieties() {
         return $this->hasMany('App\Models\Varietie', 'somatotype_id', 'somatotype_id');
     }
+
+    public function delete() {
+        $this->Varieties()->delete();
+        return parent::delete();
+    }
 }

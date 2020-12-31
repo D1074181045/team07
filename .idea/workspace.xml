@@ -20,12 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="692188ba-0b4d-4208-bbca-f97c03fcad7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/varieties/show2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/sanctum.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/team07.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/team07.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SomatotypesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VarietiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Varietie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Varietie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Somatotype.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Somatotype.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/varieties/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,6 +159,7 @@
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iaKrHyQkG94C8AHQCVyxYEFheQ" />
@@ -237,6 +246,7 @@
       <workItem from="1608815776801" duration="880000" />
       <workItem from="1608868509216" duration="15000" />
       <workItem from="1609335291759" duration="1717000" />
+      <workItem from="1609380005527" duration="16334000" />
     </task>
     <servers />
   </component>
@@ -272,13 +282,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602725923906" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1607746733438">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1609401675613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607746733438" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608789548920">
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609401675613" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609381117429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608789548920" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609381117429" />
   </component>
 </project>
