@@ -19,6 +19,10 @@ class Somatotype extends Model
         'avg_weight'
     ];
 
+    public function scopeFatType($query) {
+        $query->where('avg_weight', '>=', 20);
+    }
+
     public function Varieties() {
         return $this->hasMany('App\Models\Varietie', 'somatotype_id', 'somatotype_id');
     }

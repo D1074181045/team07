@@ -11,6 +11,18 @@
             <td>查詢指定體型</td>
             <td><button style="width: 100%" onclick=location.href="{{ route('somatotypes.show') }}">前往查詢</button></td>
         </tr>
+        <tr>
+            {!! Form::open(['action' => ['\App\Http\Controllers\SomatotypesController@index', 1], 'method' => 'get']) !!}
+            <td>查詢全部</td>
+            <td>{!! Form::submit('查詢') !!}</td>
+            {!! Form::close() !!}
+        </tr>
+        <tr>
+            {!! Form::open(['action' => ['\App\Http\Controllers\SomatotypesController@FatType', 1], 'method' => 'get']) !!}
+            <td>查詢過重體型</td>
+            <td>{!! Form::submit('查詢') !!}</td>
+            {!! Form::close() !!}
+        </tr>
     </table>
 
     </br>

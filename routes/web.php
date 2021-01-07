@@ -60,6 +60,9 @@ Route::delete('varieties/{id}/destroy', [VarietiesController::class, 'destroy'])
 Route::get('somatotypes/page={page}', [SomatotypesController::class, 'index'])->name('somatotypes.index');
 // 查詢
 
+Route::get('somatotypes/FatType/page={page}', [SomatotypesController::class, 'FatType'])->name('somatotypes.FatType');
+// 查詢過重體型
+
 Route::get('somatotypes/create', [SomatotypesController::class, 'create'])->name('somatotypes.create');
 Route::post('somatotypes/store', [SomatotypesController::class, 'store'])->name('somatotypes.store');
 // 新增

@@ -32,6 +32,24 @@ class SomatotypesController extends Controller
         ]);
     }
 
+    public function FatType($page=1)
+    {
+        $pageRow_records = 10;
+        $num_pages = $page;
+        $startRow_records = ($num_pages - 1) * $pageRow_records;
+
+        $somatotypes = Somatotype::FatType()->get();
+        $total_records = $somatotypes->count();
+        $total_pages = ceil($total_records / $pageRow_records);
+
+        return view('somatotypes.index', [
+            "somatotypes" => $somatotypes->skip($startRow_records)->take($pageRow_records),
+            "total_records" => $total_records,
+            "total_pages" => $total_pages,
+            "num_pages" => $num_pages
+        ]);
+    }
+
     public function create()
     {
         return view('somatotypes.create');
